@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Seek subtitle youtube",
+  "description": "A chrome extension helping seek subtitle youtube to ezz watching vid",
+  "version": "0.0.1",
+  "icons": {
+    "16": "logo/logo.png",
+    "48": "logo/logo.png",
+    "128": "logo/logo.png"
+  },
+  "options_page": "settings/settings.html",
+  "action": {
+    "default_title": "Seek subtitle youtube",
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": ["webRequest"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["foreground.js"],
+      "matches": ["https://*.youtube.com/*"]
+    }
+  ]
+}
