@@ -1,6 +1,6 @@
 # Seek subtitle for Youtube video
 
-<img src="https://github.com/phamthainb/seek-subtitle-youtube/blob/master/images/demo.png" width="400">
+<img src="https://github.com/phamthainb/seek-subtitle-youtube/blob/master/images/demo.png">
 
 # Feature
 
