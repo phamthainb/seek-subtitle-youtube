@@ -6,5 +6,7 @@
 
 - [x] Get subtitle & display by side video
 - [x] Auto jump to video playback when click on subtitle
-- [] Auto scroll && hight line current sub
-- [] Make UI ezz
+- [x] Auto scroll && hight line current sub
+- [x] Make UI ezz
+- [] sync when change video
+- [] optimize logic

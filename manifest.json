@@ -13,7 +13,7 @@
     "default_title": "Seek subtitle youtube",
     "default_popup": "popup/popup.html"
   },
-  "permissions": ["webRequest"],
+  "permissions": ["webRequest", "tabCapture", "tabs"],
   "host_permissions": ["*://*/*"],
   "background": {
     "service_worker": "service-worker.js"
@@ -21,7 +21,11 @@
   "content_scripts": [
     {
       "js": ["foreground.js"],
-      "matches": ["https://*.youtube.com/*"]
+      "matches": ["https://*.youtube.com/*"],
+      "all_frames": true
     }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["content.js"], "matches": ["*://*/*"] }
   ]
 }
