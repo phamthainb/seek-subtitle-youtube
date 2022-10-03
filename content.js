@@ -76,7 +76,7 @@ var turnOnAutoSub = () => {
   window.loopAutoScroll = setInterval(() => {
     const currentTime = video.currentTime;
     const scrollTo = getClosest(subtitleDataTime, currentTime);
-
+    // console.log("getClosest::", scrollTo);
     const liElement = document.getElementById(`seek-youtube_item_${scrollTo}`);
     const liElementAll = document.getElementsByClassName(`seek-youtube_item`);
     for (let i = 0; i < liElementAll.length; i++) {
@@ -90,7 +90,7 @@ var turnOnAutoSub = () => {
     if (ofs > 300) {
       divWrap.scrollTop = ofs - 300;
     }
-  }, 1000);
+  }, 150);
 };
 
 var makeList = (data) => {
@@ -112,6 +112,7 @@ var makeList = (data) => {
 
     const span = document.createElement("span");
     span.append(`${millisToMinutesAndSeconds(tStartMs)}:`);
+    span.style.color = 'blue';
     span.addEventListener("click", function (ev) {
       video.currentTime = tStartMs / 1000;
     });
