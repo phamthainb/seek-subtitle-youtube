@@ -186,7 +186,16 @@ var makeList = (data) => {
       res.json()
     );
     // console.log("resData", resData);
-    subtitleData = resData?.events;
+    subtitleData = resData?.events.filter(
+      (k) =>
+        k?.segs &&
+        Boolean(
+          ` ${k?.segs
+            .map((k) => k.utf8)
+            .toString()
+            .replaceAll(", ", " ")}`.trim()
+        )
+    );
     subtitleDataTime = resData?.events.map((k) => k.tStartMs / 1000);
   } catch (error) {
     console.log(error);
